@@ -1,0 +1,24 @@
+<Files ~ "^\.(htaccess|htpasswd)$">
+deny from all
+</Files>
+Options -Indexes
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^(dfordeals\.pk)(:80)? [NC]
+RewriteRule ^(.*) http://www.dfordeals.pk/$1 [R=301,L]
+DirectoryIndex index.php product-page.php      
+order deny,allow
+
+
+
+
+
+
+
+
+RewriteEngine on
+
+RewriteOptions inherit
+
+RewriteCond %{HTTP_HOST} ^dfordeals\.pk$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.dfordeals\.pk$
+RewriteRule ^mail\/?$ "http\:\/\/dfordeals\.pk\:2095\/cpsess8638247374" [R=301,L]

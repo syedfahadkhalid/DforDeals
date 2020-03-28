@@ -1,0 +1,85 @@
+<?php 
+include('connection.php');
+
+function clean($str)
+{
+	$str = nl2br(strip_tags(trim($str)));
+	
+	return mysql_real_escape_string($str);
+}
+
+
+
+function cleanInput($input) {
+
+  $search = array(
+    '@<script[^>]*?>.*?</script>@si',   // Strip out javascript
+    '@<[\/\!]*?[^<>]*?>@si',            // Strip out HTML tags
+    '@<style[^>]*?>.*?</style>@siU',    // Strip style tags properly
+    '@<![\s\S]*?--[ \t\n\r]*>@'         // Strip multi-line comments
+  );
+
+    $output = preg_replace($search, '', $input);
+    return $output;
+  }
+
+
+function sanitize($input) {
+    if (is_array($input)) {
+        foreach($input as $var=>$val) {
+            $output[$var] = sanitize($val);
+        }
+    }
+    else {
+        if (get_magic_quotes_gpc()) {
+            $input = stripslashes($input);
+        }
+        $input  = cleanInput($input);
+        $output = mysql_real_escape_string($input);
+    }
+    return $output;
+}
+
+
+
+
+
+$fnmae=sanitize(cleanInput($_POST['firstname']));
+$lname=sanitize(cleanInput($_POST['lastname']));
+$email=sanitize(cleanInput($_POST['email']));
+$phone=sanitize(cleanInput($_POST['phone']));
+$address=sanitize(cleanInput($_POST['address']));
+$city=sanitize(cleanInput($_POST['city']));
+$size=sanitize(cleanInput($_POST['size']));
+$color=sanitize(cleanInput($_POST['color']));
+$comment=sanitize(cleanInput($_POST['comment']));
+$dealid=$_GET['dealid'];
+$q='Select * from deals where Deal_Id="'.$dealid.'"';
+$r=mysql_query($q);
+$rr=mysql_fetch_assoc($r);
+
+$pattern ="/^([a-z0-9])(([-a-z0-9._])*([a-z0-9]))*\@([a-z0-9])(([a-z0-9-])*([a-z0-9]))+(\.([a-z0-9])([-a-z0-9_-])?([a-z0-9])+)+$/i";
+
+$dealname=sanitize(cleanInput($rr['Name']));
+
+
+	
+	$query='INSERT INTO orders(FirstName, LastName, Email, Phone, Address, City, Sizes, Colours,comment, Deal_Id, Deal_name)
+			VALUES("'.$fnmae.'","'.$lname.'","'.$email.'","'.$phone.'","'.$address.'","'.$city.'","'.$size.'","'.$color.'","'.$comment.'","'.$dealid.'","'.$dealname.'")';
+			
+	$result=mysql_query($query) or die(mysql_error());
+	if($result)
+	{
+		echo ('<script type="text/javascript">alert("Order Placed");
+				window.location="index.php";
+				</script>;');
+	}
+	
+
+else
+{
+	echo ('<script type="text/javascript">alert("Please fill all the fields");
+				window.location="index.php";
+				</script>;');
+}
+?>

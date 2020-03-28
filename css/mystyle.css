@@ -1,0 +1,121 @@
+.defination{
+    
+ border: 1px solid #505050;   
+
+    margin-top: 50px;
+}
+
+#fix{
+        position: fixed;
+        z-index: 10;
+    
+}
+ 
+
+
+.strip{
+    
+background: #d32232; 
+   
+}
+.p
+{
+ color: white;
+}
+
+.o{
+background-color:#d32232;
+    color: white;
+    
+}
+.line
+{
+ width: auto;
+    background-color: #d32232;
+    color: white;
+    margin-bottom: 5px;
+    text-align: center;
+    padding: 5px 5px 5px 5px;
+    
+}
+
+
+.slidi
+{
+    margin-right: 10%;
+    margin-left: 5%;
+    margin-bottom: 40px;
+}
+
+.tabi{
+ margin-top: -400px;   
+    
+}
+
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+/*    padding: 0 1.4em 1.4em 1.4em !important;*/
+    padding: 0 1.7em 1.7em 1.7em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+
+}
+
+#carousel6  img {
+	width:250px;
+    max-height:250px;
+	height:auto;
+	margin:0 auto;
+}
+
+#carousel0  img {
+	width:250px;
+    max-height:280px;
+	height:auto;
+	margin:0 auto;
+}
+
+
+.pad
+{
+ margin-bottom: 5%; 
+    
+    
+}
+
+.product
+{
+ margin-right: 5px;   
+    
+}
+.paddi
+{
+ padding: 5px 5px 5px 5px;
+    margin-bottom: 5px;
+}
+
+.h{
+    
+	font-family: 'Raleway', sans-serif;
+	text-transform:uppercase;
+	font-weight:700;
+	color:#505050;
+    
+        
+  
+}
+
+
+
+#505050// ya woh grey  wala hai 
+
+#d32232/ ya bnb wala hai
+
+
