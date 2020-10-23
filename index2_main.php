@@ -54,13 +54,13 @@ function sanitize($input) {
     
     
 <!-- FONTS -->
-<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
     
 <!-- SCRIPTS -->
-<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--[if IE]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <!--[if IE]><html class="ie" lang="en"> <![endif]-->
 	
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 
 <script src="js/jquery-ui.min.js" type="text/javascript"></script>
@@ -277,15 +277,15 @@ var sc_project=10345895;
 var sc_invisible=1; 
 var sc_security="0ba7aa22"; 
 var scJsHost = (("https:" == document.location.protocol) ?
-"https://secure." : "http://www.");
+"https://secure." : "https://www.");
 document.write("<sc"+"ript type='text/javascript' src='" +
 scJsHost+
 "statcounter.com/counter/counter.js'></"+"script>");
 </script>
 <noscript><div class="statcounter"><a title="shopify traffic
-stats" href="http://statcounter.com/shopify/"
+stats" href="https://statcounter.com/shopify/"
 target="_blank"><img class="statcounter"
-src="http://c.statcounter.com/10345895/0/0ba7aa22/1/"
+src="https://c.statcounter.com/10345895/0/0ba7aa22/1/"
 alt="shopify traffic stats"></a></div></noscript>
 <!-- End of StatCounter Code for Default Guide -->
 
